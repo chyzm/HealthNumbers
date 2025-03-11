@@ -159,16 +159,19 @@
             // Calculate TDEE
             let tdee = (bmr * activity).toFixed(2);
             
-            // Calculate IBW (Ideal Body Weight)
+            // Calculate IBW (Ideal Body Weight) with ±10% range
             let ibw = gender === "male" ? 
-                (50 + 0.9 * (height - 152)).toFixed(2) : 
-                (45.5 + 0.9 * (height - 152)).toFixed(2);
+                (50 + 0.9 * (height - 152)) : 
+                (45.5 + 0.9 * (height - 152));
+            let ibwMin = (ibw * 0.9).toFixed(2);
+            let ibwMax = (ibw * 1.1).toFixed(2);
+            let ibwRange = `${ibwMin} kg - ${ibwMax} kg`;
             
             // Calculate Maximum Heart Rate (MHR)
             let mhr = (220 - age).toFixed(2);
             
             // Pass calculated values to result page via URL parameters
-            let params = `bmi=${bmi}&bmiCategory=${bmiCategory}&bmr=${bmr}&tdee=${tdee}&ibw=${ibw}&mhr=${mhr}`;
+            let params = `bmi=${bmi}&bmiCategory=${bmiCategory}&bmr=${bmr}&tdee=${tdee}&ibw=${ibwRange}&mhr=${mhr}`;
             window.location.href = `result.html?${params}`;
         });
     </script>
