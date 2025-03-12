@@ -123,3 +123,50 @@ button:hover {
 
     
 }
+
+/* Original styles (adjust these as needed) */
+#whatsapp-button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#whatsapp-button i {
+    font-size: 1.2em;
+    margin-right: 5px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) { /* Adjust 768px as needed for your breakpoint */
+    .container {
+        padding-left: 15px; /* Adjust padding as needed */
+        padding-right: 15px; /* Adjust padding as needed */
+    }
+
+    #logo-container {
+        text-align: center; /* Center the logo on small screens */
+        margin-bottom: 10px; /* Add space below the logo */
+    }
+
+    #contact-button-container {
+        text-align: center; /* Center the button on small screens */
+    }
+
+    .col-md-6 {
+        width: 100%; /* Make each column take full width */
+    }
+
+    #whatsapp-button {
+        padding: 5px 10px; /* Smaller padding */
+        font-size: 0.8em; /* Smaller font size */
+        border-radius: 15px; /* Adjust border radius */
+    }
+
+    #whatsapp-button i {
+        font-size: 1em; /* Adjust icon size */
+        margin-right: 3px; /* Adjust spacing */
+    }
+}
